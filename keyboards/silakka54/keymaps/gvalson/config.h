@@ -1,0 +1,9 @@
+#pragma once
+
+#define AUTO_SHIFT_TIMEOUT 175
+// so that mod-tap keys also get sent as shifted letters
+#define RETRO_SHIFT
+// for mod-taps
+#define TAPPING_TERM 230
+// double-tapping shift turns on caps word
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
