@@ -11,29 +11,12 @@ enum layers {
     _SYM,
 };
 
-enum tap_dances {
-    TD_ENTER_NAV,
-};
-
-void en_sym(tap_dance_state_t *state, void *user_data) {
-    switch (state->count) {
-        case 1:
-            tap_code(KC_ENT);
-            break;
-        case 2:
-            // tap_code(TG(_NAV));
-            break;
-    }
-}
-
-tap_dance_action_t tap_dance_actions[] = {
-    [TD_ENTER_NAV] = ACTION_TAP_DANCE_FN(en_sym),
-};
-
 // it's too complicated to make the matrix right now...
 // const keypos_t PROGMEM hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
 
 // };
+
+// Alternate repeat is not configured at this point
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -42,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_LBRC,
         KC_ESC, KC_A,LALT_T(KC_R),LGUI_T(KC_S),LCTL_T(KC_T), KC_G,               KC_M, RCTL_T(KC_N), RGUI_T(KC_E),RALT_T(KC_I),KC_O, KC_QUOT,
         KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_GRAVE,                           KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
-                                     OSL(_SYM), OS_LSFT, KC_SPC,  LT(_NAV, KC_ENT), KC_BSPC, LT(_UTIL, QK_REP)
+                                     OSL(_SYM), OS_LSFT, KC_SPC,           LT(_NAV, KC_ENT), LT(_UTIL, KC_BSPC), QK_REP
     ),
 
     [_QWRT] = LAYOUT(
@@ -55,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NAV] = LAYOUT(
         KC_TRNS,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
-        DF(_QWRT),KC_TRNS, MS_BTN1, MS_UP, MS_BTN2, C(KC_TAB),                            KC_PGDN, KC_PGUP, KC_END,  KC_HOME, KC_APP,  KC_F12,
+        DF(_QWRT),KC_TRNS, MS_BTN1, MS_UP, MS_BTN2, C(KC_TAB),                            KC_TRNS, KC_TRNS, KC_END,  KC_HOME, KC_APP,  KC_F12,
         A(KC_LEFT),A(KC_RIGHT), MS_LEFT, MS_DOWN, MS_RGHT, LCS(KC_TAB),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGDN, KC_PGUP,
         MS_WHLL, MS_WHLR, MS_WHLD, MS_BTN3, MS_WHLU, KC_TRNS,                             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                             KC_TRNS, TO(_BASE), QK_LLCK,          KC_TRNS,  KC_TRNS,  KC_TRNS
