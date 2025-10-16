@@ -16,11 +16,30 @@ enum layers {
 
 // };
 
+// AUTO-SHIFT
+
+// Fixing retro-shift on home row mods.
+bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
+    if (IS_RETRO(keycode))
+        return true;
+
+    switch (keycode) {
+        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+            return true;
+        default:
+            return false;
+    }
+}
+
+// COMBOS
+
 const uint16_t PROGMEM c_enter[] = {LT(_NAV, KC_SPC), QK_REP, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(c_enter, KC_ENT),
 };
+
+// KEYMAP / LAYERS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
