@@ -34,9 +34,11 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
 // COMBOS
 
 const uint16_t PROGMEM c_enter[] = {LT(_NAV, KC_SPC), QK_REP, COMBO_END};
+const uint16_t PROGMEM c_tn_enter[] = {LCTL_T(KC_T), RCTL_T(KC_N), COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(c_enter, KC_ENT),
+    COMBO(c_tn_enter, KC_ENT),
 };
 
 // KEYMAP / LAYERS
@@ -83,9 +85,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_LPRN, KC_TILD, KC_PLUS, KC_MINS, KC_GRV,  KC_PERC,
         //                                                                                =        [        {        }        ]        &
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_EQL,  KC_LBRC, KC_LCBR, KC_RCBR, KC_RBRC, KC_AMPR,
-        //                                                                                )        _        <        >        Compose  $
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_RPRN,  KC_UNDS, KC_LABK, KC_RABK, KC_APP, KC_DLR,
-                                            KC_TRNS, KC_TRNS, KC_TRNS,           QK_REP,  KC_DEL,  KC_TRNS
+        //                                                                                )        _        <        >         *        $
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_RPRN,  KC_UNDS, KC_LABK, KC_RABK, KC_ASTR, KC_DLR,
+                                            KC_TRNS, KC_TRNS, KC_TRNS,           QK_REP,  KC_DEL,  KC_APP
     )
 
 };
