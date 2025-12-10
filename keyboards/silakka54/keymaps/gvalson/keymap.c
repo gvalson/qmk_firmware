@@ -81,12 +81,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM] = LAYOUT(
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        //                                                                                (        ~        +        -        `        %
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_LPRN, KC_TILD, KC_PLUS, KC_MINS, KC_GRV,  KC_PERC,
+        //                                                                                <        ~        +        -        `        %
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_LABK, KC_TILD, KC_PLUS, KC_MINS, KC_GRV,  KC_PERC,
         //                                                                                =        [        {        }        ]        &
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_EQL,  KC_LBRC, KC_LCBR, KC_RCBR, KC_RBRC, KC_AMPR,
-        //                                                                                )        _        <        >         *        $
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_RPRN,  KC_UNDS, KC_LABK, KC_RABK, KC_ASTR, KC_DLR,
+        //                                                                                >        _        (        )         *        $
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_RABK,  KC_UNDS, KC_LPRN, KC_RPRN, KC_ASTR, KC_DLR,
                                             KC_TRNS, KC_TRNS, KC_TRNS,           QK_REP,  KC_DEL,  KC_APP
     )
 
