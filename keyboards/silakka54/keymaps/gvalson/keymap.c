@@ -62,10 +62,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NAV] = LAYOUT(
-        KC_TRNS,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
+        AS_TOGG,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
         DF(_QWRT),KC_TRNS, MS_BTN1, MS_UP, MS_BTN2, C(KC_TAB),                            KC_TRNS, KC_TRNS, KC_END,  KC_HOME, KC_TRNS, KC_F12,
         A(KC_LEFT),A(KC_RIGHT), MS_LEFT, MS_DOWN, MS_RGHT, LCS(KC_TAB),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGDN, KC_PGUP,
-        MS_WHLL, MS_WHLR, MS_WHLD, MS_BTN3, MS_WHLU, KC_TRNS,                             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        MS_WHLL, MS_WHLR, MS_WHLD, MS_BTN3, MS_WHLU, KC_TRNS,                             A(KC_LEFT),A(KC_DOWN),A(KC_UP),A(KC_RIGHT),KC_TRNS, KC_TRNS,
                                             KC_TRNS, TO(_BASE), KC_TRNS,          KC_ENT,  QK_LLCK,  KC_TRNS
     ),
 
@@ -80,9 +80,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_SYM] = LAYOUT(
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        //                                                                                <        ~        +        -        `        %
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_LABK, KC_TILD, KC_PLUS, KC_MINS, KC_GRV,  KC_PERC,
+        //                                                                                @        ^        #        !        `        -
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_AT,   KC_CIRC, KC_HASH, KC_EXLM, KC_GRV,  KC_MINS,
+        //                                                                                <        ~        +        -        ;        %
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_LABK, KC_TILD, KC_PLUS, KC_MINS, KC_SCLN, KC_PERC,
         //                                                                                =        [        {        }        ]        &
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_EQL,  KC_LBRC, KC_LCBR, KC_RCBR, KC_RBRC, KC_AMPR,
         //                                                                                >        _        (        )         *        $
