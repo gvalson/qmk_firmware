@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_LBRC,
         KC_ESC, KC_A,LALT_T(KC_R),LGUI_T(KC_S),LCTL_T(KC_T), KC_G,               KC_M, RCTL_T(KC_N), RGUI_T(KC_E),RALT_T(KC_I),KC_O,  KC_QUOT,
         KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_GRAVE,                           KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
-                                     OSL(_SYM), OS_LSFT, LT(_NAV, KC_SPC),        QK_REP, LT(_UTIL, KC_BSPC), QK_AREP
+                                     OSL(_SYM), OS_LSFT, LT(_NAV, KC_SPC),        QK_REP, LT(_UTIL, KC_BSPC), KC_DEL
     ),
 
     [_QWRT] = LAYOUT(
@@ -72,23 +72,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_UTIL] = LAYOUT(
         AS_TOGG,  AS_DOWN, AS_UP,   AS_RPT,  KC_TRNS, KC_TRNS,                            KC_MSTP, KC_MPRV, KC_MNXT, KC_MPLY, KC_TRNS,  KC_TRNS,
         KC_TRNS,  KC_PSCR, KC_TRNS, KC_INS,A(KC_INS), KC_TRNS,                            KC_MUTE, KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS,  KC_TRNS,
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_F20,  KC_BRID, KC_BRIU, KC_TRNS, KC_TRNS,  KC_TRNS,
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_F20,  KC_BRID, KC_BRIU, MS_ACL0, MS_ACL1,  MS_ACL2,
         //        全角     英数    無変換   変換　　ひらがな
         KC_TRNS,  KC_LNG5, KC_LNG2, KC_INT5, KC_INT4, KC_INT2,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         //                                                    한영 かな
-                                            QK_LLCK, KC_TRNS,  KC_LNG1,          KC_TRNS,  KC_TRNS,  KC_TRNS
+                                            QK_LLCK, KC_APP,  KC_LNG1,          KC_TRNS,  KC_TRNS,  KC_TRNS
     ),
 
     [_SYM] = LAYOUT(
-        //                                                                                @        ^        #        !        `        -
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_AT,   KC_CIRC, KC_HASH, KC_EXLM, KC_GRV,  KC_MINS,
-        //                                                                                <        ~        +        -        ;        %
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_LABK, KC_TILD, KC_PLUS, KC_MINS, KC_SCLN, KC_PERC,
-        //                                                                                =        [        {        }        ]        &
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_EQL,  KC_LBRC, KC_LCBR, KC_RCBR, KC_RBRC, KC_AMPR,
-        //                                                                                >        _        (        )         *        $
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_RABK,  KC_UNDS, KC_LPRN, KC_RPRN, KC_ASTR, KC_DLR,
-                                            KC_TRNS, KC_TRNS, KC_TRNS,           QK_REP,  KC_DEL,  KC_APP
+        // NOTE: maybe using the num lock keys isn't worth it here.
+        //                                                                                @        ^        #        !        `        $
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_AT,   KC_CIRC, KC_HASH, KC_EXLM, KC_GRV,  KC_DLR,
+        //        NumP /                                                                  <        ~        +        -        ;        %
+        KC_TRNS,  KC_PSLS, KC_P7, KC_P8, KC_P9, KC_TRNS,                                  KC_LABK, KC_TILD, KC_PLUS, KC_MINS, KC_SCLN, KC_PERC,
+        // NLk                                                                               =        [        {        }        ]        &
+        KC_NUM,   KC_P0,   KC_P4, KC_P5, KC_P6, KC_TRNS,                                  KC_EQL,  KC_LBRC, KC_LCBR, KC_RCBR, KC_RBRC, KC_AMPR,
+        //        NumP *                        NumP .                                    >        _        (        )         *       Backslash
+        KC_TRNS,  KC_PAST, KC_P1, KC_P2, KC_P3, KC_PDOT,                                  KC_RABK, KC_UNDS, KC_LPRN, KC_RPRN, KC_ASTR, KC_BSLS,
+                                            KC_TRNS, KC_TRNS, KC_TRNS,           QK_REP,  KC_TRNS,  QK_AREP
     )
 
 };
