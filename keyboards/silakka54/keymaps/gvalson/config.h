@@ -6,5 +6,7 @@
 #define RETRO_SHIFT 500
 // for mod-taps
 #define TAPPING_TERM 230
+// to make sure that normal typing isn't triggering home row mods
+#define FLOW_TAP_TERM 150
 // double-tapping shift turns on caps word
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD

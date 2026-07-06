@@ -33,11 +33,11 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
 
 // COMBOS
 
-const uint16_t PROGMEM c_enter[] = {LT(_NAV, KC_SPC), QK_REP, COMBO_END};
+const uint16_t PROGMEM c_thumbs_enter[] = {LT(_NAV, KC_SPC), QK_REP, COMBO_END};
 const uint16_t PROGMEM c_tn_enter[] = {LCTL_T(KC_T), RCTL_T(KC_N), COMBO_END};
 
 combo_t key_combos[] = {
-    COMBO(c_enter, KC_ENT),
+    COMBO(c_thumbs_enter, KC_ENT),
     COMBO(c_tn_enter, KC_ENT),
 };
 
@@ -85,8 +85,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_AT,   KC_CIRC, KC_HASH, KC_EXLM, KC_GRV,  KC_DLR,
         //        NumP /                                                                  <        ~        +        -        ;        %
         KC_TRNS,  KC_PSLS, KC_P7, KC_P8, KC_P9, KC_TRNS,                                  KC_LABK, KC_TILD, KC_PLUS, KC_MINS, KC_SCLN, KC_PERC,
-        // NLk                                                                               =        [        {        }        ]        &
-        KC_NUM,   KC_P0,   KC_P4, KC_P5, KC_P6, KC_TRNS,                                  KC_EQL,  KC_LBRC, KC_LCBR, KC_RCBR, KC_RBRC, KC_AMPR,
+        // NLk                                                                            =        [        {        }        ]        &
+        KC_LNUM,   KC_P0,  KC_P4, KC_P5, KC_P6, KC_TRNS,                                  KC_EQL,  KC_LBRC, KC_LCBR, KC_RCBR, KC_RBRC, KC_AMPR,
         //        NumP *                        NumP .                                    >        _        (        )         *       Backslash
         KC_TRNS,  KC_PAST, KC_P1, KC_P2, KC_P3, KC_PDOT,                                  KC_RABK, KC_UNDS, KC_LPRN, KC_RPRN, KC_ASTR, KC_BSLS,
                                             KC_TRNS, KC_TRNS, KC_TRNS,           QK_REP,  KC_TRNS,  QK_AREP
